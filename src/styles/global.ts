@@ -25,6 +25,17 @@ export const GlobalStyle = createGlobalStyle`
     color ${(props) => props.theme.base.text}
   }
 
+  input, button {
+    outline: none;
+    border: none;
+    
+    &:focus {
+      outline: none;
+      border: none;
+      box-shadow: none;
+    }
+  }
+
   h1, h2, h3, h4, h5 {
     font-family: "Baloo 2", sans-serif;
     color ${(props) => props.theme.base.title};

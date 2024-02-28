@@ -5,7 +5,7 @@ import {
   HeaderContainer,
   LocationAction,
 } from './Header.styles.ts';
-import Logo from '../assets/ignite-coffee-logo.svg';
+import Logo from '../../assets/ignite-coffee-logo.svg';
 import { MapPin, ShoppingCartSimple } from '@phosphor-icons/react';
 
 export const Header = () => {
@@ -26,4 +26,4 @@ export const Header = () => {
       </HeaderActions>
     </HeaderContainer>
   );
-}
+};
