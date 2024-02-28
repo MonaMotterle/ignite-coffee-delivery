@@ -1,12 +1,12 @@
 import { HomeContainer } from './Home.styles.ts';
-import { Header } from '../../components/Header.tsx';
+import { Banner } from './components/Banner';
 
 export function Home() {
   return (
     <HomeContainer>
-      <Header />
+      <Banner />
 
-      <h1>Hello World</h1>
+      <h1>CoffeeList</h1>
     </HomeContainer>
   );
 }

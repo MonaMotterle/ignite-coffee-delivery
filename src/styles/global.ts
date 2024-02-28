@@ -22,5 +22,32 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 1rem;
+    color ${(props) => props.theme.base.text}
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: "Baloo 2", sans-serif;
+    color ${(props) => props.theme.base.title};
+    line-height: 130%;
+    font-weight: 800;
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  h5 {
+    font-size: 1.125rem;
+    font-weight: 700;
   }
 `;
