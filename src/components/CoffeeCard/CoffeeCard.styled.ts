@@ -53,21 +53,21 @@ export const CoffeeActionContainer = styled.div`
   align-items: center;
 
   width: 100%;
+`;
 
-  p {
-    display: flex;
-    align-items: baseline;
-    color: ${(props) => props.theme.base.text};
-    text-align: right;
-  }
+export const CoffeeCardValue = styled.div`
+  display: flex;
+  align-items: baseline;
+  color: ${(props) => props.theme.base.text};
+  text-align: right;
+`;
 
-  div {
-    display: flex;
-    padding: 0.5rem;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-  }
+export const CoffeeQtyContainer = styled.div`
+  display: flex;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 `;
 
 export const CoffeeQty = styled.div`
@@ -91,8 +91,13 @@ export const CoffeeQty = styled.div`
 export const CoffeeQtyOperator = styled.button`
   background: none;
   color: ${(props) => props.theme.brand.purple.default};
+  &:not(:disabled) {
+    cursor: pointer;
 
-  cursor: pointer;
+    &:hover {
+      color: ${(props) => props.theme.brand.purple.dark};
+    }
+  }
 `;
 
 export const CoffeeQtyTotal = styled.p`

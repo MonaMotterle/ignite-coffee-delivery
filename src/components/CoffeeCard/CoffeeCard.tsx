@@ -3,7 +3,9 @@ import {
   CoffeeBuyButton,
   CoffeeCardContainer,
   CoffeeCardSmallText,
+  CoffeeCardValue,
   CoffeeQty,
+  CoffeeQtyContainer,
   CoffeeQtyOperator,
   CoffeeQtyTotal,
   CoffeeTag,
@@ -47,7 +49,7 @@ export const CoffeeCard = (itemProps: CoffeeType) => {
       <CoffeeCardSmallText>{itemProps.description}</CoffeeCardSmallText>
 
       <CoffeeActionContainer>
-        <p>
+        <CoffeeCardValue>
           <CoffeeCardSmallText>R$</CoffeeCardSmallText>
           <h3>
             {new Intl.NumberFormat('pt-BR', {
@@ -55,9 +57,9 @@ export const CoffeeCard = (itemProps: CoffeeType) => {
               maximumFractionDigits: 2,
             }).format(itemProps.price)}
           </h3>
-        </p>
+        </CoffeeCardValue>
 
-        <div>
+        <CoffeeQtyContainer>
           <CoffeeQty>
             <CoffeeQtyOperator
               onClick={handleRemoveItem}
@@ -76,7 +78,7 @@ export const CoffeeCard = (itemProps: CoffeeType) => {
           <CoffeeBuyButton>
             <ShoppingCartSimple size={22} weight="fill" />
           </CoffeeBuyButton>
-        </div>
+        </CoffeeQtyContainer>
       </CoffeeActionContainer>
     </CoffeeCardContainer>
   );
