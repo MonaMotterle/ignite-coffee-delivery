@@ -39,24 +39,37 @@ export const BannerBulletPoints = styled.div`
   grid-template-columns: auto auto;
   grid-row-gap: 1.25rem;
   grid-column-gap: 2.5rem;
+`;
 
-  p {
+type BulletPointColor = 'yellow' | 'darkYellow' | 'purple' | 'baseText';
+
+export const BannerBulletPointItem = styled.p<{ color?: BulletPointColor }>`
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  font-size: 1rem;
+  color: ${(props) => props.theme.base.text};
+
+  span {
+    color: ${(props) => props.theme.background};
     display: flex;
+    padding: 0.5rem;
+    justify-content: center;
     align-items: center;
-    gap: 0.75rem;
 
-    font-size: 1rem;
-    color: ${(props) => props.theme.base.text};
-
-    span {
-      color: ${(props) => props.theme.background};
-      display: flex;
-      padding: 0.5rem;
-      justify-content: center;
-      align-items: center;
-
-      border-radius: 62.5rem;
-      background: ${(props) => props.theme.brand.yellow.dark};
-    }
-  }
+    border-radius: 62.5rem;
+    background: ${(props) => {
+      switch (props.color) {
+        case 'purple':
+          return props.theme.brand.purple.default;
+        case 'baseText':
+          return props.theme.base.text;
+        case 'yellow':
+          return props.theme.brand.yellow.default;
+        case 'darkYellow':
+        default:
+          return props.theme.brand.yellow.dark;
+      }
+    }}
 `;

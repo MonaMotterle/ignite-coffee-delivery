@@ -19,14 +19,14 @@ export const CoffeeCardContainer = styled.div`
     color: ${(props) => props.theme.base.subtitle};
     margin: 1rem auto 0.5rem;
   }
+`;
 
-  p {
-    color: ${(props) => props.theme.base.label};
-    text-align: center;
+export const CoffeeCardSmallText = styled.p`
+  color: ${(props) => props.theme.base.label};
+  text-align: center;
 
-    font-size: 0.875rem;
-    line-height: 130%;
-  }
+  font-size: 0.875rem;
+  line-height: 130%;
 `;
 
 export const CoffeeTag = styled.div`
@@ -91,6 +91,12 @@ export const CoffeeQty = styled.div`
 export const CoffeeQtyOperator = styled.button`
   background: none;
   color: ${(props) => props.theme.brand.purple.default};
+
+  cursor: pointer;
+`;
+
+export const CoffeeQtyTotal = styled.p`
+  cursor: default;
 `;
 
 export const CoffeeBuyButton = styled.button`
@@ -102,4 +108,10 @@ export const CoffeeBuyButton = styled.button`
   border-radius: 6px;
   color: ${(props) => props.theme.base.card};
   background: ${(props) => props.theme.brand.purple.dark};
+
+  cursor: pointer;
+
+  &:hover {
+    background: ${(props) => props.theme.brand.purple.default};
+  }
 `;

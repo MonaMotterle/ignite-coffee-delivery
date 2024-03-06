@@ -5,6 +5,7 @@ import {
   BannerContainer,
   BannerContent,
   BannerBulletPoints,
+  BannerBulletPointItem,
 } from './Banner.styles.ts';
 import { Coffee, Package, ShoppingCart, Timer } from '@phosphor-icons/react';
 
@@ -20,30 +21,30 @@ export const Banner = () => {
           </p>
 
           <BannerBulletPoints>
-            <p>
+            <BannerBulletPointItem color="darkYellow">
               <span>
                 <ShoppingCart size={16} weight="fill" />
               </span>
               Compra simples e segura
-            </p>
-            <p>
+            </BannerBulletPointItem>
+            <BannerBulletPointItem color="baseText">
               <span>
                 <Package size={16} weight="fill" />
               </span>
               Embalagem mantém o café intacto
-            </p>
-            <p>
+            </BannerBulletPointItem>
+            <BannerBulletPointItem color="yellow">
               <span>
                 <Timer size={16} weight="fill" />
               </span>
               Entrega rápida e rastreada
-            </p>
-            <p>
+            </BannerBulletPointItem>
+            <BannerBulletPointItem color="purple">
               <span>
                 <Coffee size={16} weight="fill" />
               </span>
               O café chega fresquinho até você
-            </p>
+            </BannerBulletPointItem>
           </BannerBulletPoints>
         </div>
 
