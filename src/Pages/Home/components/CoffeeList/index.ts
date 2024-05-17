@@ -1,1 +1,1 @@
-export { CoffeeList, type CoffeeType } from './CoffeeList.tsx';
+export { CoffeeList } from './CoffeeList.tsx';
