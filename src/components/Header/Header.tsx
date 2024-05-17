@@ -16,7 +16,7 @@ export const Header = () => {
       <HeaderActions>
         <LocationAction>
           <MapPin size={20} weight="fill" />
-          <p>São Paulo</p>
+          <p>São Paulo, SP</p>
         </LocationAction>
 
         <CheckoutAction>

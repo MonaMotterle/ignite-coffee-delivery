@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
 export const CoffeeListContainer = styled.div`
-  margin: 2rem auto;
+  margin: 2rem auto 9.8rem;
+
+  h2 {
+    color: ${(props) => props.theme.base.subtitle};
+  }
 `;
 
 export const CoffeeListWrapper = styled.div`

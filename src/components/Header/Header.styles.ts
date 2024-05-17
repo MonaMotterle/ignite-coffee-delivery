@@ -23,7 +23,15 @@ export const LocationAction = styled.div`
 
   border-radius: 0.375rem;
   background: ${(props) => props.theme.brand.purple.light};
-  color: ${(props) => props.theme.brand.purple.dark};
+  color: ${(props) => props.theme.brand.purple.default};
+  
+  p {
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 1.1375rem */
+    color: ${(props) => props.theme.brand.purple.dark};
+  }
 `;
 
 export const CheckoutAction = styled.div`

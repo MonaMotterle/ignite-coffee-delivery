@@ -50,7 +50,7 @@ export const CoffeeCard = (itemProps: CoffeeType) => {
 
       <CoffeeActionContainer>
         <CoffeeCardValue>
-          <CoffeeCardSmallText>R$</CoffeeCardSmallText>
+          <CoffeeCardSmallText>R$&nbsp;</CoffeeCardSmallText>
           <h3>
             {new Intl.NumberFormat('pt-BR', {
               minimumFractionDigits: 2,

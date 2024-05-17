@@ -4,7 +4,7 @@ export const CoffeeCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.25rem 1.5rem;
+  padding: 1.25rem;
   border-radius: 6px 36px;
 
   flex-shrink: 0;
@@ -26,7 +26,15 @@ export const CoffeeCardSmallText = styled.p`
   text-align: center;
 
   font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
   line-height: 130%;
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
 `;
 
 export const CoffeeTag = styled.div`
@@ -47,7 +55,7 @@ export const CoffeeTag = styled.div`
 `;
 
 export const CoffeeActionContainer = styled.div`
-  margin-top: 2.06rem;
+  margin: 2.06rem 0.25rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -64,7 +72,6 @@ export const CoffeeCardValue = styled.div`
 
 export const CoffeeQtyContainer = styled.div`
   display: flex;
-  padding: 0.5rem;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;

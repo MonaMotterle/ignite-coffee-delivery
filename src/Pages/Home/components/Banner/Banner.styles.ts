@@ -13,6 +13,10 @@ export const BannerBackgroundContainer = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100vw;
+
+  img {
+    width: 100vw;
+  }
 `;
 
 export const BannerContent = styled.div`
@@ -24,7 +28,6 @@ export const BannerContent = styled.div`
   p {
     margin-top: 1rem;
     color: ${(props) => props.theme.base.subtitle};
-    font-size: 1.25rem;
   }
 
   img {
@@ -32,6 +35,10 @@ export const BannerContent = styled.div`
     height: 22.5rem;
     flex-shrink: 0;
   }
+`;
+
+export const BannerContentHeader = styled.p`
+  font-size: 1.25rem;
 `;
 export const BannerBulletPoints = styled.div`
   margin-top: 4.12rem;

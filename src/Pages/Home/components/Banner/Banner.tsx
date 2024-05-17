@@ -6,6 +6,7 @@ import {
   BannerContent,
   BannerBulletPoints,
   BannerBulletPointItem,
+  BannerContentHeader,
 } from './Banner.styles.ts';
 import { Coffee, Package, ShoppingCart, Timer } from '@phosphor-icons/react';
 
@@ -14,11 +15,13 @@ export const Banner = () => {
     <BannerContainer>
       <BannerContent>
         <div>
-          <h1>Encontre o café perfeito para qualquer hora do dia</h1>
-          <p>
-            Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
-            hora
-          </p>
+          <BannerContentHeader>
+            <h1>Encontre o café perfeito para qualquer hora do dia</h1>
+            <p>
+              Com o Coffee Delivery você recebe seu café onde estiver, a
+              qualquer hora
+            </p>
+          </BannerContentHeader>
 
           <BannerBulletPoints>
             <BannerBulletPointItem color="darkYellow">
