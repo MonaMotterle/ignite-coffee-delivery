@@ -55,10 +55,14 @@ export const PaymentButton = styled.div`
   padding: 1rem;
   align-items: center;
   gap: 0.7rem;
-  flex: 1 0 0;
+  flex: 1 0 auto;
+  cursor: pointer;
 
   border-radius: 0.375rem;
+  border: 1px solid ${(props) => props.theme.base.button};
   background: ${(props) => props.theme.base.button};
+
+  transition: 0.25s;
 
   span {
     color: ${(props) => props.theme.brand.purple.default};
@@ -71,5 +75,10 @@ export const PaymentButton = styled.div`
     font-weight: 400;
     line-height: 160%; /* 1.2rem */
     text-transform: uppercase;
+  }
+
+  &:hover {
+    border: 1px solid ${(props) => props.theme.brand.purple.default};
+    background: ${(props) => props.theme.brand.purple.light};
   }
 `;

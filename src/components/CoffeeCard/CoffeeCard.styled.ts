@@ -69,46 +69,11 @@ export const CoffeeCardValue = styled.div`
   color: ${(props) => props.theme.base.text};
   text-align: right;
 `;
-
-export const CoffeeQtyContainer = styled.div`
+export const CoffeeQtyContainer = styled.div<{ isSmall?: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-`;
-
-export const CoffeeQty = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 38px;
-
-  gap: 0.25rem;
-  padding: 0.5rem;
-  border-radius: 6px;
-
-  background: ${(props) => props.theme.base.button};
-
-  input {
-    color: ${(props) => props.theme.base.title};
-    text-align: center;
-  }
-`;
-
-export const CoffeeQtyOperator = styled.button`
-  background: none;
-  color: ${(props) => props.theme.brand.purple.default};
-  &:not(:disabled) {
-    cursor: pointer;
-
-    &:hover {
-      color: ${(props) => props.theme.brand.purple.dark};
-    }
-  }
-`;
-
-export const CoffeeQtyTotal = styled.p`
-  cursor: default;
 `;
 
 export const CoffeeBuyButton = styled.button`

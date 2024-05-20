@@ -1,20 +1,37 @@
-import { OrderItemsContainer } from './OrderItems.styles.ts';
+import {
+  OrderConfirmationButton,
+  OrderItemsContainer,
+  OrderItemsList,
+  OrderTotal,
+  OrderTotalDetails,
+  OrderTotalList,
+} from './OrderItems.styles.ts';
+import { OrderItemCard } from '../OrderItemCard';
 
 export const OrderItems = () => {
   return (
     <OrderItemsContainer>
-      {/* /!*Lista*!/ */}
-      {/* <div> */}
-      {/*  <div>card</div> */}
-      {/* </div> */}
-      {/* /!*Valores*!/ */}
-      {/* <div> */}
-      {/*  total de itens */}
-      {/*  entrega */}
-      {/*  total */}
-      {/*  */}
-      {/*  confirmar */}
-      {/* </div> */}
+      <OrderItemsList>
+        <OrderItemCard />
+      </OrderItemsList>
+
+      <OrderTotalList>
+        <OrderTotalDetails>
+          Total de itens <span>R$ 29,70</span>
+        </OrderTotalDetails>
+
+        <OrderTotalDetails>
+          Entrega <span>R$ 3,50</span>
+        </OrderTotalDetails>
+
+        <OrderTotal>
+          Total <span>R$ 33,20</span>
+        </OrderTotal>
+      </OrderTotalList>
+
+      <OrderConfirmationButton>
+        <p>confirmar pedido</p>
+      </OrderConfirmationButton>
     </OrderItemsContainer>
   );
 };

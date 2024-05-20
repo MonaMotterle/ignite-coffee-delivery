@@ -4,14 +4,11 @@ import {
   CoffeeCardContainer,
   CoffeeCardSmallText,
   CoffeeCardValue,
-  CoffeeQty,
   CoffeeQtyContainer,
-  CoffeeQtyOperator,
-  CoffeeQtyTotal,
   CoffeeTag,
 } from './CoffeeCard.styled.ts';
-import { Minus, Plus, ShoppingCartSimple } from '@phosphor-icons/react';
-import { useState } from 'react';
+import { ShoppingCartSimple } from '@phosphor-icons/react';
+import { CoffeeQty } from '../CoffeeQtyInput';
 
 export interface CoffeeType {
   id: number | string;
@@ -23,17 +20,6 @@ export interface CoffeeType {
 }
 
 export const CoffeeCard = (itemProps: CoffeeType) => {
-  const [itemQty, setItemQty] = useState(1);
-
-  const handleAddItem = () => {
-    setItemQty((state) => state + 1);
-  };
-  const handleRemoveItem = () => {
-    if (itemQty <= 1) return;
-
-    setItemQty((state) => state - 1);
-  };
-
   return (
     <CoffeeCardContainer>
       <img src={itemProps.imageSrc} alt={itemProps.title} />
@@ -60,20 +46,7 @@ export const CoffeeCard = (itemProps: CoffeeType) => {
         </CoffeeCardValue>
 
         <CoffeeQtyContainer>
-          <CoffeeQty>
-            <CoffeeQtyOperator
-              onClick={handleRemoveItem}
-              disabled={itemQty <= 1}
-            >
-              <Minus size={14} weight="bold" />
-            </CoffeeQtyOperator>
-
-            <CoffeeQtyTotal>{itemQty}</CoffeeQtyTotal>
-
-            <CoffeeQtyOperator onClick={handleAddItem}>
-              <Plus size={14} weight="bold" />
-            </CoffeeQtyOperator>
-          </CoffeeQty>
+          <CoffeeQty />
 
           <CoffeeBuyButton>
             <ShoppingCartSimple size={22} weight="fill" />

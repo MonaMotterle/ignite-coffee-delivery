@@ -1,6 +1,6 @@
 import { CheckoutContainer, CheckoutHeader } from './Checkout.styles.ts';
 import { DeliveryDetails } from './components/DeliveryDetails';
-import { OrderItemsContainer } from './components/OrderItems/OrderItems.styles.ts';
+import { OrderItems } from './components/OrderItems';
 
 export const Checkout = () => {
   return (
@@ -14,7 +14,7 @@ export const Checkout = () => {
       <div>
         <CheckoutHeader>Cafés selecionados</CheckoutHeader>
 
-        <OrderItemsContainer />
+        <OrderItems />
       </div>
     </CheckoutContainer>
   );
