@@ -1,21 +1,21 @@
-import American from '../../assets/coffeeCardImages/American.png';
-import Arabic from '../../assets/coffeeCardImages/Arabic.png';
-import Capuccino from '../../assets/coffeeCardImages/Capuccino.png';
-import CoffeeWithMilk from '../../assets/coffeeCardImages/CoffeeWithMilk.png';
-import CreamyCoffee from '../../assets/coffeeCardImages/CreamyCoffee.png';
-import Cuban from '../../assets/coffeeCardImages/Cuban.png';
-import Expresso from '../../assets/coffeeCardImages/Expresso.png';
-import Hawaiian from '../../assets/coffeeCardImages/Hawaiian.png';
-import HotChocolate from '../../assets/coffeeCardImages/HotChocolate.png';
-import IcedCoffee from '../../assets/coffeeCardImages/IcedCoffee.png';
-import Irish from '../../assets/coffeeCardImages/Irish.png';
-import Latte from '../../assets/coffeeCardImages/Latte.png';
-import Macchiato from '../../assets/coffeeCardImages/Macchiato.png';
-import Mochaccino from '../../assets/coffeeCardImages/Mochaccino.png';
-import { CoffeeType } from '../../components/CoffeeCard/CoffeeCard.tsx';
-export const coffeeListItems: CoffeeType[] = [
+import American from './src/assets/coffeeCardImages/American.png';
+import Arabic from './src/assets/coffeeCardImages/Arabic.png';
+import Capuccino from './src/assets/coffeeCardImages/Capuccino.png';
+import CoffeeWithMilk from './src/assets/coffeeCardImages/CoffeeWithMilk.png';
+import CreamyCoffee from './src/assets/coffeeCardImages/CreamyCoffee.png';
+import Cuban from './src/assets/coffeeCardImages/Cuban.png';
+import Expresso from './src/assets/coffeeCardImages/Expresso.png';
+import Hawaiian from './src/assets/coffeeCardImages/Hawaiian.png';
+import HotChocolate from './src/assets/coffeeCardImages/HotChocolate.png';
+import IcedCoffee from './src/assets/coffeeCardImages/IcedCoffee.png';
+import Irish from './src/assets/coffeeCardImages/Irish.png';
+import Latte from './src/assets/coffeeCardImages/Latte.png';
+import Macchiato from './src/assets/coffeeCardImages/Macchiato.png';
+import Mochaccino from './src/assets/coffeeCardImages/Mochaccino.png';
+import { CoffeeType } from './src/components/CoffeeCard/CoffeeCard.tsx';
+export const coffees: CoffeeType[] = [
   {
-    id: crypto.randomUUID(),
+    id: '0',
     imageSrc: Expresso,
     tags: ['Tradicional'],
     title: 'Expresso Tradicional',
@@ -23,7 +23,7 @@ export const coffeeListItems: CoffeeType[] = [
     price: 9.9,
   },
   {
-    id: crypto.randomUUID(),
+    id: '1',
     imageSrc: American,
     tags: ['Tradicional'],
     title: 'Expresso Americano',
@@ -31,7 +31,7 @@ export const coffeeListItems: CoffeeType[] = [
     price: 9.9,
   },
   {
-    id: crypto.randomUUID(),
+    id: '2',
     imageSrc: CreamyCoffee,
     tags: ['Tradicional'],
     title: 'Expresso Cremoso',
@@ -39,7 +39,7 @@ export const coffeeListItems: CoffeeType[] = [
     price: 9.9,
   },
   {
-    id: crypto.randomUUID(),
+    id: '3',
     imageSrc: IcedCoffee,
     tags: ['Tradicional', 'gelado'],
     title: 'Expresso Gelado',
@@ -47,7 +47,7 @@ export const coffeeListItems: CoffeeType[] = [
     price: 9.9,
   },
   {
-    id: crypto.randomUUID(),
+    id: '4',
     imageSrc: CoffeeWithMilk,
     tags: ['Tradicional', 'Com leite'],
     title: 'Café com Leite',
@@ -55,7 +55,7 @@ export const coffeeListItems: CoffeeType[] = [
     price: 9.9,
   },
   {
-    id: crypto.randomUUID(),
+    id: '5',
     imageSrc: Latte,
     tags: ['Tradicional', 'Com leite'],
     title: 'Latte',
@@ -64,7 +64,7 @@ export const coffeeListItems: CoffeeType[] = [
     price: 9.9,
   },
   {
-    id: crypto.randomUUID(),
+    id: '6',
     imageSrc: Capuccino,
     tags: ['Tradicional', 'Com leite'],
     title: 'Capuccino',
@@ -73,7 +73,7 @@ export const coffeeListItems: CoffeeType[] = [
     price: 9.9,
   },
   {
-    id: crypto.randomUUID(),
+    id: '7',
     imageSrc: Macchiato,
     tags: ['Tradicional', 'Com leite'],
     title: 'Macchiato',
@@ -82,7 +82,7 @@ export const coffeeListItems: CoffeeType[] = [
     price: 9.9,
   },
   {
-    id: crypto.randomUUID(),
+    id: '8',
     imageSrc: Mochaccino,
     tags: ['Tradicional', 'com leite'],
     title: 'Mocaccino',
@@ -90,7 +90,7 @@ export const coffeeListItems: CoffeeType[] = [
     price: 9.9,
   },
   {
-    id: crypto.randomUUID(),
+    id: '9',
     imageSrc: HotChocolate,
     tags: ['especial', 'com leite'],
     title: 'Chocolate Quente',
@@ -98,7 +98,7 @@ export const coffeeListItems: CoffeeType[] = [
     price: 9.9,
   },
   {
-    id: crypto.randomUUID(),
+    id: '10',
     imageSrc: Cuban,
     tags: ['especial', 'alcoólico', 'gelado'],
     title: 'Cubano',
@@ -107,7 +107,7 @@ export const coffeeListItems: CoffeeType[] = [
     price: 9.9,
   },
   {
-    id: crypto.randomUUID(),
+    id: '11',
     imageSrc: Hawaiian,
     tags: ['especial'],
     title: 'Havaiano',
@@ -115,7 +115,7 @@ export const coffeeListItems: CoffeeType[] = [
     price: 9.9,
   },
   {
-    id: crypto.randomUUID(),
+    id: '12',
     imageSrc: Arabic,
     tags: ['especial'],
     title: 'Árabe',
@@ -123,7 +123,7 @@ export const coffeeListItems: CoffeeType[] = [
     price: 9.9,
   },
   {
-    id: crypto.randomUUID(),
+    id: '13',
     imageSrc: Irish,
     tags: ['especial', 'alcoólico'],
     title: 'Irlandês',

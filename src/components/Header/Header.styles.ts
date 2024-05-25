@@ -24,7 +24,7 @@ export const LocationAction = styled.div`
   border-radius: 0.375rem;
   background: ${(props) => props.theme.brand.purple.light};
   color: ${(props) => props.theme.brand.purple.default};
-  
+
   p {
     font-size: 0.875rem;
     font-style: normal;

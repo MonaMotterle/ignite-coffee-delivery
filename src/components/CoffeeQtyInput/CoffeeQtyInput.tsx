@@ -4,34 +4,29 @@ import {
   CoffeeQtyOperator,
   CoffeeQtyTotal,
 } from './CoffeeQtyInput.styles.ts';
-import { useState } from 'react';
 
 interface ICoffeeQty {
-  initialQty?: number;
+  quantity: number;
+  incrementQuantity: () => void;
+  decrementQuantity: () => void;
   slim?: boolean;
 }
 
-export const CoffeeQty = (props: ICoffeeQty) => {
-  const [itemQty, setItemQty] = useState(props.initialQty || 1);
-
-  const handleAddItem = () => {
-    setItemQty((state) => state + 1);
-  };
-  const handleRemoveItem = () => {
-    if (itemQty <= 1) return;
-
-    setItemQty((state) => state - 1);
-  };
-
+export const CoffeeQty = ({
+  slim = false,
+  quantity,
+  incrementQuantity,
+  decrementQuantity,
+}: ICoffeeQty) => {
   return (
-    <CoffeeQtyContainer $isSmall={props.slim}>
-      <CoffeeQtyOperator onClick={handleRemoveItem} disabled={itemQty <= 1}>
+    <CoffeeQtyContainer $isSmall={slim}>
+      <CoffeeQtyOperator onClick={decrementQuantity} disabled={quantity <= 1}>
         <Minus size={14} weight="bold" />
       </CoffeeQtyOperator>
 
-      <CoffeeQtyTotal>{itemQty}</CoffeeQtyTotal>
+      <CoffeeQtyTotal>{quantity}</CoffeeQtyTotal>
 
-      <CoffeeQtyOperator onClick={handleAddItem}>
+      <CoffeeQtyOperator onClick={incrementQuantity}>
         <Plus size={14} weight="bold" />
       </CoffeeQtyOperator>
     </CoffeeQtyContainer>

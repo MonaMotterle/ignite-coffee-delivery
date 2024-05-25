@@ -1,5 +1,5 @@
 import { HomeContainer } from './Home.styles.ts';
-import { coffeeListItems } from './coffeeListItems.ts';
+import { coffees } from '../../../coffeeListItems.ts';
 import { Banner } from './components/Banner';
 import { CoffeeList } from './components/CoffeeList';
 
@@ -8,7 +8,7 @@ export function Home() {
     <HomeContainer>
       <Banner />
 
-      <CoffeeList list={coffeeListItems} />
+      <CoffeeList list={coffees} />
     </HomeContainer>
   );
 }

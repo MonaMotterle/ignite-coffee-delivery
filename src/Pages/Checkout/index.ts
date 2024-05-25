@@ -1,1 +1,1 @@
-export { Checkout } from './Checkout.tsx';
+export { Checkout, type OrderInfo } from './Checkout.tsx';

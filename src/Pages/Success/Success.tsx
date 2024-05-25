@@ -11,9 +11,11 @@ import {
   type IconColors,
 } from './Success.styles.ts';
 import { CurrencyDollar, MapPin, Timer } from '@phosphor-icons/react';
+import { useCart } from '../../hooks/useCart.tsx';
+import { useParams } from 'react-router-dom';
 
 interface DetailsProps {
-  key: number;
+  key: string;
   icon: React.ReactNode;
   color: IconColors;
   topLine: React.ReactNode;
@@ -21,20 +23,37 @@ interface DetailsProps {
 }
 
 export const Success = () => {
+  const { orders } = useCart();
+  const { orderId } = useParams();
+  const orderInfo = orders.find((order) => order.id === Number(orderId));
+  const paymentMethod = {
+    credit: 'Cartão de crédito',
+    debit: 'Cartão de débito',
+    cash: 'Dinheiro',
+  };
+
+  if (!orderInfo?.id) {
+    return null;
+  }
+
   const details: DetailsProps[] = [
     {
-      key: 1,
+      key: 'deliveryAddress',
       icon: <MapPin size={16} weight="fill" />,
       color: 'purple',
       topLine: (
         <p>
-          Entrega em <span>Rua João Daniel Martinelli, 102</span>
+          Entrega em <span>{`${orderInfo.street}, ${orderInfo.number}`}</span>
         </p>
       ),
-      bottomLine: <p>Farrapos - Porto Alegre, RS</p>,
+      bottomLine: (
+        <p>
+          {orderInfo.neighborhood} - {orderInfo.city},{orderInfo.state}
+        </p>
+      ),
     },
     {
-      key: 2,
+      key: 'deliveryTime',
       icon: <Timer size={16} weight="fill" />,
       color: 'yellow',
       topLine: <p>Previsão de entrega,</p>,
@@ -45,17 +64,21 @@ export const Success = () => {
       ),
     },
     {
-      key: 3,
+      key: 'deliveryPaymentMethod',
       icon: <CurrencyDollar size={16} />,
       color: 'darkYellow',
       topLine: <p>Pagamento na entrega</p>,
       bottomLine: (
         <p>
-          <span>Cartão de Crédito</span>
+          <span>{paymentMethod[orderInfo.paymentMethod]}</span>
         </p>
       ),
     },
   ];
+
+  if (!orderInfo?.id) {
+    return null;
+  }
 
   return (
     <FinishedOrderContainer>

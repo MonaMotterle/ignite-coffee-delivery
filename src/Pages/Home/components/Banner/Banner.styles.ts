@@ -37,7 +37,7 @@ export const BannerContent = styled.div`
   }
 `;
 
-export const BannerContentHeader = styled.p`
+export const BannerContentHeader = styled.div`
   font-size: 1.25rem;
 `;
 export const BannerBulletPoints = styled.div`

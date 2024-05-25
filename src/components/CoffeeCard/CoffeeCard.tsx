@@ -9,9 +9,11 @@ import {
 } from './CoffeeCard.styled.ts';
 import { ShoppingCartSimple } from '@phosphor-icons/react';
 import { CoffeeQty } from '../CoffeeQtyInput';
+import { useCart } from '../../hooks/useCart.tsx';
+import { useEffect, useState } from 'react';
 
 export interface CoffeeType {
-  id: number | string;
+  id: string;
   imageSrc: string;
   tags: Array<string>;
   title: string;
@@ -20,6 +22,42 @@ export interface CoffeeType {
 }
 
 export const CoffeeCard = (itemProps: CoffeeType) => {
+  const [quantity, setQuantity] = useState(1);
+  const [isItemAdded, setIsItemAdded] = useState(false);
+  const { addItem } = useCart();
+
+  function incrementQuantity() {
+    setQuantity((state) => state + 1);
+  }
+
+  function decrementQuantity() {
+    if (quantity > 1) {
+      setQuantity((state) => state - 1);
+    }
+  }
+
+  function handleAddItem() {
+    addItem({ id: itemProps.id, quantity });
+    setIsItemAdded(true);
+    setQuantity(1);
+  }
+
+  useEffect(() => {
+    let timeout: ReturnType<typeof setTimeout> | undefined;
+
+    if (isItemAdded) {
+      timeout = setTimeout(() => {
+        setIsItemAdded(false);
+      }, 1000);
+    }
+
+    return () => {
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+    };
+  }, [isItemAdded]);
+
   return (
     <CoffeeCardContainer>
       <img src={itemProps.imageSrc} alt={itemProps.title} />
@@ -46,9 +84,13 @@ export const CoffeeCard = (itemProps: CoffeeType) => {
         </CoffeeCardValue>
 
         <CoffeeQtyContainer>
-          <CoffeeQty />
+          <CoffeeQty
+            incrementQuantity={incrementQuantity}
+            decrementQuantity={decrementQuantity}
+            quantity={quantity}
+          />
 
-          <CoffeeBuyButton>
+          <CoffeeBuyButton disabled={isItemAdded} onClick={handleAddItem}>
             <ShoppingCartSimple size={22} weight="fill" />
           </CoffeeBuyButton>
         </CoffeeQtyContainer>

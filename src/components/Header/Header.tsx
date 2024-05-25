@@ -7,11 +7,17 @@ import {
 } from './Header.styles.ts';
 import Logo from '../../assets/ignite-coffee-logo.svg';
 import { MapPin, ShoppingCartSimple } from '@phosphor-icons/react';
+import { useCart } from '../../hooks/useCart.tsx';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
+  const { cart } = useCart();
+
   return (
     <HeaderContainer>
-      <img src={Logo} alt="" />
+      <Link to={'/'}>
+        <img src={Logo} alt="" />
+      </Link>
 
       <HeaderActions>
         <LocationAction>
@@ -19,10 +25,15 @@ export const Header = () => {
           <p>São Paulo, SP</p>
         </LocationAction>
 
-        <CheckoutAction>
-          <CheckoutActionCounter>3</CheckoutActionCounter>
-          <ShoppingCartSimple size={22} weight="fill" />
-        </CheckoutAction>
+        <Link to={`checkout`} aria-disabled={cart.length === 0}>
+          <CheckoutAction>
+            {cart.length > 0 ? (
+              <CheckoutActionCounter>{cart.length}</CheckoutActionCounter>
+            ) : null}
+
+            <ShoppingCartSimple size={22} weight="fill" />
+          </CheckoutAction>
+        </Link>
       </HeaderActions>
     </HeaderContainer>
   );
